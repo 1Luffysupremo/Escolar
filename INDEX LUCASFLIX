@@ -1,0 +1,92 @@
+<header>PLATAFORMA DE STREAMING</header>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCASFLIX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e50914;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .video-item {
+            margin-bottom: 50px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: black;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .description {
+            font-size: 1.1em;
+            color: #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LUCASFLIX</h1>
+</header>
+
+<div class="container">
+    <!-- Vídeo 1 -->
+    <div class="video-item">
+        <h2>Vídeo 1: COMO JOGAR FIFA 23</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/U3tXcf-5AMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="description">Desabafo sobre o game.</p>
+    </div>
+
+    <!-- Vídeo 2 -->
+    <div class="video-item">
+        <h2>Vídeo 2: Como jogar FC 24</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/-y1Pn1Qd6js" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="description">Como começar no FC 24 da melhor forma.</p>
+    </div>
+
+    <!-- Vídeo 3 -->
+    <div class="video-item">
+        <h2>Vídeo 3: FALL GUYS</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/i92iaKjyDMg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="description">Gameplay de Fall Guys.</p>
+    </div>
+</div>
+
+</body>
+</html>
