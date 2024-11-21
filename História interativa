@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #story-container {
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="story-container">
+        <h1>Bem-vindo à aventura!</h1>
+        <p id="story-text">Você está em uma floresta escura. Há dois caminhos à sua frente. Qual você escolhe?</p>
+        <button onclick="choosePath('left')">Caminho à esquerda</button>
+        <button onclick="choosePath('right')">Caminho à direita</button>
+    </div>
+
+    <script>
+        function choosePath(path) {
+            const storyText = document.getElementById('story-text');
+            const storyContainer = document.getElementById('story-container');
+
+            if (path === 'left') {
+                storyText.textContent = "Você escolheu o caminho à esquerda. Após caminhar por algum tempo, encontra uma cabana misteriosa. Você entra?";
+                storyContainer.innerHTML += `
+                    <button onclick="enterCabin(true)">Sim</button>
+                    <button onclick="enterCabin(false)">Não</button>
+                `;
+            } else if (path === 'right') {
+                storyText.textContent = "Você escolheu o caminho à direita. O som de água corrente fica mais alto. Você segue em direção ao som?";
+                storyContainer.innerHTML += `
+                    <button onclick="followWater(true)">Sim</button>
+                    <button onclick="followWater(false)">Não</button>
+                `;
+            }
+        }
+
+        function enterCabin(enter) {
+            const storyText = document.getElementById('story-text');
+            if (enter) {
+                storyText.textContent = "Dentro da cabana, você encontra um mapa do tesouro. Sua jornada apenas começou!";
+            } else {
+                storyText.textContent = "Você decide não entrar na cabana e continua sua jornada. Logo, a floresta escurece ainda mais.";
+            }
+        }
+
+        function followWater(follow) {
+            const storyText = document.getElementById('story-text');
+            if (follow) {
+                storyText.textContent = "Você encontra uma cachoeira brilhante e descobre uma passagem secreta atrás dela!";
+            } else {
+                storyText.textContent = "Você decide não seguir o som da água e acaba perdido na floresta.";
+            }
+        }
+    </script>
+</body>
+</html>
